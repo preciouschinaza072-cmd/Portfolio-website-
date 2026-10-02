@@ -1,119 +1,92 @@
-const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const reducedMotion = reducedMotionQuery.matches;
-    const loadingScreen = document.getElementById("loadingScreen");
-    const scrollProgress = document.getElementById("scrollProgress");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const loadingScreen = document.getElementById("loadingScreen");
+const progress = document.getElementById("scrollProgress");
+const year = document.getElementById("year");
 
-    function updateScrollProgress() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      scrollProgress.style.transform = `scaleX(${Math.min(progress, 100) / 100})`;
-    }
+year.textContent = new Date().getFullYear();
 
-    if (reducedMotion) {
-      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("show"));
-    } else {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      }, { threshold: 0.14 });
+function updateProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+}
 
-      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    }
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
 
-    window.addEventListener("load", () => {
-      setTimeout(() => loadingScreen.classList.add("hidden"), reducedMotion ? 0 : 420);
-      document.body.classList.add("loaded");
-    });
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+  window.setTimeout(() => loadingScreen.classList.add("hidden"), reducedMotion ? 0 : 350);
+});
 
-    window.addEventListener("scroll", updateScrollProgress, { passive: true });
-    updateScrollProgress();
+const reveals = document.querySelectorAll(".reveal");
 
-    const tiltCards = document.querySelectorAll(".tilt-card");
-    if (!reducedMotion) {
-      tiltCards.forEach((card) => {
-        card.addEventListener("mousemove", (event) => {
-          const bounds = card.getBoundingClientRect();
-          const px = (event.clientX - bounds.left) / bounds.width;
-          const py = (event.clientY - bounds.top) / bounds.height;
-          const rotateY = (px - 0.5) * 6;
-          const rotateX = (0.5 - py) * 6;
-          card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "";
-        });
-      });
-    }
-
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-    const particles = [];
-    const maxParticles = 56;
-    let rafId;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    function makeParticle() {
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 1.8 + 0.4,
-        speedX: (Math.random() - 0.5) * 0.24,
-        speedY: (Math.random() - 0.5) * 0.24,
-        alpha: Math.random() * 0.5 + 0.2,
-      };
-    }
-
-    function initParticles() {
-      particles.length = 0;
-      for (let i = 0; i < maxParticles; i += 1) {
-        particles.push(makeParticle());
+if (reducedMotion) {
+  reveals.forEach((el) => el.classList.add("show"));
+} else {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        obs.unobserve(entry.target);
       }
-    }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach((el) => observer.observe(el));
+}
 
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p, index) => {
-        p.x += p.speedX;
-        p.y += p.speedY;
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+const particles = [];
+const maxParticles = 42;
+let raf;
 
-        if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
-          particles[index] = makeParticle();
-        }
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + "px";
+  canvas.style.height = window.innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(164, 195, 255, ${p.alpha})`;
-        ctx.fill();
-      });
+function createParticle() {
+  return {
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.4 + .3,
+    vx: (Math.random() - .5) * .16,
+    vy: (Math.random() - .5) * .16,
+    a: Math.random() * .35 + .08
+  };
+}
 
-      rafId = requestAnimationFrame(animateParticles);
-    }
+function resetParticles() {
+  particles.length = 0;
+  for (let i = 0; i < maxParticles; i++) particles.push(createParticle());
+}
 
-    if (!reducedMotion) {
-      resizeCanvas();
-      initParticles();
-      animateParticles();
+function animate() {
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  particles.forEach((p) => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > window.innerWidth || p.y < 0 || p.y > window.innerHeight) Object.assign(p, createParticle());
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(164,195,255,${p.a})`;
+    ctx.fill();
+  });
+  raf = requestAnimationFrame(animate);
+}
 
-      window.addEventListener("resize", () => {
-        resizeCanvas();
-        initParticles();
-      });
-
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden && rafId) {
-          cancelAnimationFrame(rafId);
-        } else if (!document.hidden) {
-          animateParticles();
-        }
-      });
-    } else {
-      canvas.style.display = "none";
-    }
+if (!reducedMotion) {
+  resizeCanvas();
+  resetParticles();
+  animate();
+  window.addEventListener("resize", () => { resizeCanvas(); resetParticles(); });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && raf) cancelAnimationFrame(raf);
+    if (!document.hidden) animate();
+  });
+} else {
+  canvas.remove();
+}
