@@ -1,86 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chidraszn | Portfolio</title>
-  <meta name="description" content="Web3 community manager and moderator portfolio." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChidraSzn | AI, Programming & Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio of a Cybersecurity student building practical projects in AI annotation, programming, web development, and cybersecurity.">
+  <meta name="keywords" content="AI annotation, data labeling, Python, JavaScript, web development, cybersecurity, FUTO, portfolio">
+  <meta name="author" content="Ebube Chinaza">
+  <meta name="theme-color" content="#070a12">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="loading-screen" id="loadingScreen" aria-hidden="true">
-    <div class="loader-core">
-      <span class="loading-label">Loading</span>
-    </div>
+    <div class="loader-core"><span>CHIDRASZN</span></div>
   </div>
 
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <canvas class="particles" id="particles" aria-hidden="true"></canvas>
-  <div class="bg-orb"></div>
-  <div class="bg-grid"></div>
-  <div class="bg-light"></div>
-  <div class="bg-light-2"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-one" aria-hidden="true"></div>
+  <div class="bg-orb orb-two" aria-hidden="true"></div>
 
-  <div class="container">
+  <main class="container">
     <header class="nav">
-      <div class="brand">CHIDRASZN</div>
-      <nav class="nav-links">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#skills">Skills</a>
-        <a class="nav-link" href="#contact">Contact</a>
+      <a class="brand" href="#">CHIDRASZN<span>.</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section class="hero section-spacing">
-      <div class="hero-copy-wrap reveal">
-        <div class="eyebrow"><i></i> Web3 Community Manager • Moderator</div>
-        <h1>Building communities that <span class="grad">grow strong</span>, stay active, and move projects forward.</h1>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><i></i> AI Annotation · Programming · Cybersecurity</p>
+        <h1>Building practical tech skills, <span class="grad">one project at a time.</span></h1>
         <p class="hero-copy">
-          Community manager and moderator focused on engagement, structure, support, and healthy growth across Web3 and NFT communities. I help projects create active spaces where members stay involved and launches feel organized.
+          I’m Ebube, a Cybersecurity student at FUTO focused on AI annotation and data work, programming, and web development. I’m learning by building real projects and exploring how software, data, and security connect.
         </p>
 
-        <div class="hero-chips">
-          <div class="chip"><span>🎮</span> Discord Growth</div>
-          <div class="chip"><span>🛡️</span> Trusted Moderation</div>
-          <div class="chip"><span>🚀</span> Launch Support</div>
+        <div class="hero-tags">
+          <span>AI Data & Annotation</span>
+          <span>Python & JavaScript</span>
+          <span>Web Development</span>
+          <span>Cybersecurity</span>
         </div>
 
         <div class="cta">
-          <a class="btn primary" href="mailto:ebubechinaza007@gmail.com">Contact Me</a>
-          <a class="btn secondary" href="https://x.com/ch_ddyy" target="_blank" rel="noreferrer">View X Profile</a>
+          <a class="btn primary" href="#projects">View Projects <span>↓</span></a>
+          <a class="btn secondary" href="mailto:ebubechinaza007@gmail.com">Let's Connect <span>↗</span></a>
         </div>
 
-        <div class="stats">
-          <div class="stat tilt-card">
-            <strong>10+</strong>
-            <span>Projects supported across Web3 communities</span>
-          </div>
-          <div class="stat tilt-card">
-            <strong>Discord</strong>
-            <span>Community growth, support, and moderation</span>
-          </div>
-          <div class="stat tilt-card">
-            <strong>NFT</strong>
-            <span>Launch support, campaigns, and retention</span>
-          </div>
+        <div class="mini-proof">
+          <div><strong>FUTO</strong><span>Cybersecurity student</span></div>
+          <div><strong>BUILDING</strong><span>Hands-on projects</span></div>
+          <div><strong>OPEN</strong><span>Internships & remote work</span></div>
         </div>
       </div>
 
       <div class="showcase reveal" id="about">
         <div class="profile-stage">
-          <div class="ring r1"></div>
-          <div class="ring r2"></div>
-          <div class="ring r3"></div>
-
-          <div class="floating-card fc1">Community Growth<small>Engagement-first support</small></div>
-          <div class="floating-card fc2">Moderation<small>Calm, clear, organized</small></div>
-          <div class="floating-card fc3">Web3 Support<small>NFT and project launches</small></div>
-          <div class="floating-card fc4">Retention<small>Healthy member experience</small></div>
-
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="orbit orbit-c"></div>
+          <div class="code-card code-one"><span>01</span> DATA + AI</div>
+          <div class="code-card code-two"><span>02</span> CODE</div>
+          <div class="code-card code-three"><span>03</span> SECURITY</div>
           <div class="pfp-frame">
             <div class="pfp-inner">
-              <img src="profile.png" alt="Chidraszn profile picture" />
+              <img src="profile.png" alt="Ebube Chinaza profile">
             </div>
           </div>
         </div>
@@ -89,154 +78,130 @@
 
     <section class="section section-spacing reveal">
       <div class="section-head">
-        <p class="section-kicker">Overview</p>
-        <h2 class="section-title">What I bring</h2>
+        <p class="section-kicker">About</p>
+        <h2 class="section-title">A student who likes to build.</h2>
         <p class="section-copy">
-          I help communities feel organized, welcoming, and alive. From moderation and member support to campaign execution and engagement strategy, I focus on keeping communities active while helping projects maintain momentum.
+          My current focus sits at the intersection of AI data, software development, and cybersecurity. I’m still early in my career, so I’m focused on learning quickly, building useful projects, and developing skills I can apply to real work.
         </p>
       </div>
 
-      <div class="grid-3 feature-grid">
-        <article class="card tilt-card">
-          <div class="icon-box">👥</div>
-          <h3>Community Growth</h3>
-          <p>Managed and supported communities by keeping members engaged, informed, and active through regular interaction and coordinated support.</p>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon-box">◈</div>
+          <h3>AI Annotation</h3>
+          <p>Interested in data labeling, categorization, review, validation, and quality-focused AI data tasks.</p>
         </article>
-        <article class="card tilt-card">
-          <div class="icon-box">🛡️</div>
-          <h3>Moderation</h3>
-          <p>Maintained safe and positive spaces by enforcing guidelines, handling spam, resolving issues, and escalating sensitive matters when needed.</p>
+        <article class="card">
+          <div class="icon-box">{ }</div>
+          <h3>Programming</h3>
+          <p>Building with Python, JavaScript, HTML, CSS, Flask, React, and other tools through practical projects.</p>
         </article>
-        <article class="card tilt-card">
-          <div class="icon-box">🚀</div>
-          <h3>Campaign Support</h3>
-          <p>Boosted activity through events, giveaways, launch support, and interactive initiatives designed to keep communities energized.</p>
+        <article class="card">
+          <div class="icon-box">⌁</div>
+          <h3>Cybersecurity</h3>
+          <p>Developing foundations in networking, Linux, Windows Server, Cisco Packet Tracer, and security concepts.</p>
         </article>
       </div>
     </section>
 
-    <section class="section section-spacing grid-2 project-area">
-      <article class="card reveal tilt-card" id="projects">
-        <div class="section-head compact">
-          <p class="section-kicker">Portfolio</p>
-          <h2 class="section-title small">Projects</h2>
-        </div>
+    <section class="section section-spacing" id="projects">
+      <div class="section-head reveal">
+        <p class="section-kicker">Selected Work</p>
+        <h2 class="section-title">Projects that show how I learn.</h2>
+      </div>
 
-        <div class="project-list">
-          <div class="project">
-            <div class="project-num">1</div>
-            <div>
-              <h4>Tora Asobi NFT</h4>
-              <p>Supported community engagement, member retention, and daily moderation for a sold-out Web3 project.</p>
-            </div>
-          </div>
+      <div class="project-grid">
+        <article class="project-card featured reveal">
+          <div class="project-top"><span class="project-index">01</span><span>PYTHON · FLASK · POSTGRESQL</span></div>
+          <h3>Full-Stack Blog Web Application</h3>
+          <p>A full-stack blog platform with authentication, password reset, profiles, image uploads, search, categories, tags, likes, and an admin dashboard.</p>
+          <div class="project-tech"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>JavaScript</span></div>
+        </article>
 
-          <div class="project">
-            <div class="project-num">2</div>
-            <div>
-              <h4>OrangutanX</h4>
-              <p>Helped manage activity, support conversations, and campaign flow while keeping the community organized and active.</p>
-            </div>
-          </div>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-index">02</span><span>REACT · TAILWIND</span></div>
+          <h3>Developer Portfolio</h3>
+          <p>Responsive portfolio work focused on reusable components, mobile-friendly layouts, interactive UI, and animation.</p>
+          <div class="project-tech"><span>React</span><span>Tailwind CSS</span><span>Framer Motion</span></div>
+        </article>
 
-          <div class="project">
-            <div class="project-num">3</div>
-            <div>
-              <h4>Dragons Clan, Emojis on Base, and 10+ others</h4>
-              <p>Contributed to moderation, launch support, onboarding, events, and day-to-day community operations across multiple NFT spaces.</p>
-            </div>
-          </div>
-        </div>
-      </article>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-index">03</span><span>PYTHON · FLASK</span></div>
+          <h3>AI Chatbot Web Integration</h3>
+          <p>Integrated a Python-based chatbot into a Flask application and created structured training data for interactive responses.</p>
+          <div class="project-tech"><span>Python</span><span>Flask</span><span>ChatterBot</span></div>
+        </article>
 
-      <article class="card reveal tilt-card">
-        <div class="section-head compact">
-          <p class="section-kicker">Highlights</p>
-          <h2 class="section-title small">Key Achievements</h2>
-        </div>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-index">04</span><span>CISCO · LINUX · WINDOWS</span></div>
+          <h3>Network & Security Labs</h3>
+          <p>Hands-on practice with network topologies, ACLs, DHCP, DNS, Linux, Windows Server, system administration, and troubleshooting.</p>
+          <div class="project-tech"><span>Cisco Packet Tracer</span><span>Linux</span><span>Windows Server</span></div>
+        </article>
 
-        <ul class="achievement-list">
-          <li>Helped grow Discord communities through consistent moderation and active member support.</li>
-          <li>Improved engagement with campaigns, events, and interactive community activities.</li>
-          <li>Supported NFT launches by helping communities stay informed, active, and launch-ready.</li>
-          <li>Built positive member experiences by responding to questions and resolving issues quickly.</li>
-        </ul>
-      </article>
+        <article class="project-card secondary-project reveal">
+          <div class="project-top"><span class="project-index">05</span><span>WEB3</span></div>
+          <h3>Community & Moderation Work</h3>
+          <p>Experience supporting Web3 communities through moderation, member support, onboarding, campaigns, and day-to-day community operations.</p>
+          <div class="project-tech"><span>Discord</span><span>Telegram</span><span>Community Support</span></div>
+        </article>
+      </div>
     </section>
 
-    <section class="section section-spacing grid-2">
-      <article class="card reveal tilt-card" id="skills">
-        <div class="section-head compact">
-          <p class="section-kicker">Capabilities</p>
-          <h2 class="section-title small">Skills</h2>
-        </div>
+    <section class="section section-spacing" id="skills">
+      <div class="section-head reveal">
+        <p class="section-kicker">Toolkit</p>
+        <h2 class="section-title">Skills I’m actively developing.</h2>
+      </div>
 
-        <div class="skills">
-          <div class="skill">Discord server management and growth</div>
-          <div class="skill">Telegram moderation and community support</div>
-          <div class="skill">Engagement strategy and event coordination</div>
-          <div class="skill">Web3 content creation and communication</div>
-          <div class="skill">Giveaway and airdrop campaign management</div>
-          <div class="skill">Conflict resolution and issue escalation</div>
-          <div class="skill">Basic knowledge of Web3, NFTs, and DAOs</div>
-          <div class="skill">Member onboarding and retention support</div>
-        </div>
-      </article>
+      <div class="skills-layout">
+        <article class="card skill-panel reveal">
+          <h3>AI & Data</h3>
+          <div class="skills"><span>Data Annotation</span><span>Data Labeling</span><span>Text Annotation</span><span>Image Annotation</span><span>Data Categorization</span><span>Data Review</span><span>Data Validation</span><span>Quality Checking</span></div>
+        </article>
+        <article class="card skill-panel reveal">
+          <h3>Programming & Web</h3>
+          <div class="skills"><span>Python</span><span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>React</span><span>Tailwind CSS</span><span>Flask</span><span>Git</span><span>GitHub</span></div>
+        </article>
+        <article class="card skill-panel reveal">
+          <h3>Cybersecurity & Networking</h3>
+          <div class="skills"><span>Networking Fundamentals</span><span>Cisco Packet Tracer</span><span>ACLs</span><span>DHCP</span><span>DNS</span><span>Linux</span><span>Windows Server</span><span>System Administration</span></div>
+        </article>
+      </div>
+    </section>
 
-      <article class="reveal contact-panel" id="contact">
-        <div class="section-head compact">
-          <p class="section-kicker">Reach Out</p>
-          <h2 class="section-title small">Contact</h2>
-          <p class="section-copy compact-copy">
-            Open to community management, moderation, and Web3 support roles.
-          </p>
-        </div>
+    <section class="section section-spacing education-grid reveal">
+      <div>
+        <p class="section-kicker">Education</p>
+        <h2 class="section-title">Federal University of Technology, Owerri</h2>
+        <p class="degree">B.Sc. Cybersecurity</p>
+        <p class="section-copy">Relevant areas: Cybercrime, Law & Countermeasures · Computer Networking · System & Network Administration · Programming</p>
+      </div>
+      <div class="availability-card">
+        <span class="availability-dot"></span>
+        <div><strong>Currently learning & building</strong><p>Open to AI annotation, programming, web development, and entry-level cybersecurity opportunities.</p></div>
+      </div>
+    </section>
 
-        <div class="contact-stack">
-          <a class="contact-card" href="mailto:ebubechinaza007@gmail.com">
-            <div class="contact-icon">✉️</div>
-            <div class="contact-copy-block">
-              <h3>Email</h3>
-              <p>ebubechinaza007@gmail.com</p>
-            </div>
-            <div class="contact-arrow">↗</div>
-          </a>
-
-          <a class="contact-card" href="https://t.me/ChidraSzn" target="_blank" rel="noreferrer">
-            <div class="contact-icon">📨</div>
-            <div class="contact-copy-block">
-              <h3>Telegram</h3>
-              <p>@ChidraSzn</p>
-            </div>
-            <div class="contact-arrow">↗</div>
-          </a>
-
-          <div class="contact-card">
-            <div class="contact-icon">🎮</div>
-            <div class="contact-copy-block">
-              <h3>Discord</h3>
-              <p>chiiddyy</p>
-            </div>
-            <div class="contact-arrow">↗</div>
-          </div>
-
-          <a class="contact-card" href="https://x.com/ch_ddyy" target="_blank" rel="noreferrer">
-            <div class="contact-icon">𝕏</div>
-            <div class="contact-copy-block">
-              <h3>X (Twitter)</h3>
-              <p>@ch_ddyy</p>
-            </div>
-            <div class="contact-arrow">↗</div>
-          </a>
-        </div>
-      </article>
+    <section class="section section-spacing contact-section" id="contact">
+      <div class="contact-copy reveal">
+        <p class="section-kicker">Contact</p>
+        <h2 class="section-title">Have a project or opportunity?</h2>
+        <p class="section-copy">I’m open to remote AI/data work, programming opportunities, and cybersecurity internships where I can contribute and keep learning.</p>
+      </div>
+      <div class="contact-actions reveal">
+        <a class="contact-link" href="mailto:ebubechinaza007@gmail.com"><span>Email</span><strong>ebubechinaza007@gmail.com ↗</strong></a>
+        <a class="contact-link" href="https://github.com/preciouschinaza072-cmd" target="_blank" rel="noreferrer"><span>GitHub</span><strong>@preciouschinaza072-cmd ↗</strong></a>
+        <a class="contact-link" href="https://x.com/ch_ddyy" target="_blank" rel="noreferrer"><span>X</span><strong>@ch_ddyy ↗</strong></a>
+        <a class="contact-link" href="https://t.me/ChidraSzn" target="_blank" rel="noreferrer"><span>Telegram</span><strong>@ChidraSzn ↗</strong></a>
+      </div>
     </section>
 
     <footer class="footer">
       <div class="footer-line"></div>
-      <p class="footer-text">powered by <span class="footer-bolt">⚡</span>chidraszn.</p>
+      <p>© <span id="year"></span> ChidraSzn. Built while learning.</p>
     </footer>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
