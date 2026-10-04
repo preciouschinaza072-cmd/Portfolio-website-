@@ -67,11 +67,7 @@ a{color:inherit}
 .contact{padding:120px 0 125px}
 .contact h2{max-width:800px;margin:15px 0;font-family:Manrope,sans-serif;font-size:clamp(2.8rem,6vw,5.6rem);line-height:.98;letter-spacing:-.06em;font-weight:600}
 .contact>p:not(.eyebrow){max-width:590px;color:var(--muted);line-height:1.75}
-.contact-links{display:grid;grid-template-columns:repeat(2,1fr);margin-top:50px;border-top:1px solid var(--ink)}
-.contact-links a{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:19px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.83rem;min-width:0}
-.contact-links a:hover{padding-left:9px}
-.social-label{font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap}
-.contact-links a>span:last-child{color:#888880;text-align:right;overflow-wrap:anywhere}
+
 
 .site-footer{border-top:1px solid var(--ink);background:#efefeb}
 .footer-inner{display:flex;justify-content:center;align-items:center;gap:12px;padding:28px 0}
